@@ -5,7 +5,7 @@ const dbCredentials  = () => {
         "user": "root",
         "password": "Root@2075137",
         "port": "3306",
-        "database": "latestBeta",
+        "database": "Qpassignment",
         "debug": false
     } 
 }

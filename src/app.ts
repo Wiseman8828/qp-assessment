@@ -2,6 +2,10 @@ import express, { Application, Request, Response } from "express"
 import sequelize from './database/connection'
 import manageGrocery from "./routes/manageGrocery";
 import placeOrder from "./routes/placeOrder";
+import authRoute from "./routes/authRoute";
+import { authenticateUser } from "./middleware/authMiddleware";
+import * as dotenv from 'dotenv';
+dotenv.config();
 
 const app: Application = express()
 
@@ -9,9 +13,10 @@ const app: Application = express()
 app.use(express.json());
 const PORT = process.env.PORT || 3000;
 
+app.use("/auth", authRoute);
+app.use("/grocery", authenticateUser, manageGrocery);
+app.use("/order", authenticateUser, placeOrder);
 
-app.use("/grocery", manageGrocery);
-app.use("/order", placeOrder);
 
 
 (async () => {
