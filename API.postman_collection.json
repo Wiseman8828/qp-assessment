@@ -1,0 +1,228 @@
+{
+	"info": {
+		"_postman_id": "a334b1a8-62ac-4e77-994c-bf9c662585e2",
+		"name": "Qp-assignment",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25911600"
+	},
+	"item": [
+		{
+			"name": "Add grocery",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjhlMTFlNjQxLWI2OWQtNDkyYy04OTFjLWU3OTgyYTNhOGNiMiIsImVtYWlsIjoiSmVubnkubWVub25AZXhhbXBsZS5jb20iLCJuYW1lIjoiSmVubnkgTWVub24iLCJpc0FkbWluIjpmYWxzZSwiaWF0IjoxNzMzOTAxOTU0LCJleHAiOjE3MzM5MDU1NTR9.9GU3D6lOrQaYIqjZMpxM0ZaMUnxGDEFuxiALMu1iv-k",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Berry\",\n    \"price\": 1.5,\n    \"stock\": 10\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/grocery",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"grocery"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Grocery",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVkYTA1MGZkLTdlN2UtNDU1Zi1iZThlLTJiYjQ4MDY2OWQ2OCIsImVtYWlsIjoiam9obi5kb2VAZXhhbXBsZS5jb20iLCJuYW1lIjoiSm9obiBEb2UiLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE3MzM4OTUxNjksImV4cCI6MTczMzg5ODc2OX0.0W2ok6uAQ0t_QcXAY-wKn28t989vi9WV-o24aAerpqo",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"price\": 3.0,\n    \"stock\": 1000\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/grocery/25be75ee-b8ae-498d-a375-d7d270488a03",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"grocery",
+						"25be75ee-b8ae-498d-a375-d7d270488a03"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Place Order",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVkYTA1MGZkLTdlN2UtNDU1Zi1iZThlLTJiYjQ4MDY2OWQ2OCIsImVtYWlsIjoiam9obi5kb2VAZXhhbXBsZS5jb20iLCJuYW1lIjoiSm9obiBEb2UiLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE3MzM4OTUxNjksImV4cCI6MTczMzg5ODc2OX0.0W2ok6uAQ0t_QcXAY-wKn28t989vi9WV-o24aAerpqo",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"items\": [\n      { \"groceryId\": \"25be75ee-b8ae-498d-a375-d7d270488a03\", \"quantity\": 2 },\n      { \"groceryId\": \"87912171-71db-483f-a630-90e16fff9335\", \"quantity\": 5 }\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/order/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"order",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "signup",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "// {\n//     \"name\": \"John Doe\",\n//     \"email\": \"john.doe@example.com\",\n//     \"password\": \"securePassword123\",\n//     \"isAdmin\": true\n// }\n\n{\n    \"name\": \"Jenny Menon\",\n    \"email\": \"Jenny.menon@example.com\",\n    \"password\": \"securePassword123\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/auth/signup",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"auth",
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "// {\n//     \"email\": \"john.doe@example.com\",\n//     \"password\": \"securePassword123\"\n// }\n\n{\n    \"email\": \"Jenny.menon@example.com\",\n    \"password\": \"securePassword123\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Groceries",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjhlMTFlNjQxLWI2OWQtNDkyYy04OTFjLWU3OTgyYTNhOGNiMiIsImVtYWlsIjoiSmVubnkubWVub25AZXhhbXBsZS5jb20iLCJuYW1lIjoiSmVubnkgTWVub24iLCJpc0FkbWluIjpmYWxzZSwiaWF0IjoxNzMzOTAxOTU0LCJleHAiOjE3MzM5MDU1NTR9.9GU3D6lOrQaYIqjZMpxM0ZaMUnxGDEFuxiALMu1iv-k",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/grocery",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"grocery"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
